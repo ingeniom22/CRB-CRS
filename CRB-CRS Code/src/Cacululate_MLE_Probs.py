@@ -18,7 +18,7 @@ class Cacululate_MLE_Probs:
         self.PATH = os.path.dirname(os.path.abspath(__file__))
         self.ROOT_DIR_PATH = os.path.abspath(os.path.dirname(self.PATH))
         self.DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data')
-        self.DATA_path = os.path.join(self.DATA_path, 'dialog_data', "")
+        self.DATA_path = os.path.join(self.DATA_path, 'DialogData', "")
         self.words = []
         self.load_corpus(corpus_file)
         self.unigram = self.bigram = self.trigram = self.quadrigram = self.pentigram = None

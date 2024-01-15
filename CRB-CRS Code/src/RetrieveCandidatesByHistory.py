@@ -15,19 +15,19 @@ nltk.download('stopwords')
 from nltk.tokenize import word_tokenize
 from nltk.lm.preprocessing import padded_everygram_pipeline
 from scipy import spatial
-from sent2vec.vectorizer import Vectorizer
+# from sent2vec.vectorizer import Vectorizer
 from nltk.lm import MLE
 import dill as pickle
 from nltk.util import ngrams
 from collections import Counter
-from src.Cacululate_MLE_Probs import Cacululate_MLE_Probs
+from Cacululate_MLE_Probs import Cacululate_MLE_Probs
 
 class RetrieveCandidateResponses_TFIDF:
     def __init__(self):
         self.PATH = os.path.dirname(os.path.abspath(__file__))
         self.ROOT_DIR_PATH = os.path.abspath(os.path.dirname(self.PATH))
         self.DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data')
-        self.DATA_path = os.path.join(self.DATA_path, 'dialog_data', "")
+        self.DATA_path = os.path.join(self.DATA_path, 'DialogData', "")
         self.corpus_dataSW = []
         self.corpus_data = []
         self.original_corpus = []
@@ -369,7 +369,7 @@ class RetrieveCandidateResponses_TFIDF:
 if __name__ == '__main__':
     obj = RetrieveCandidateResponses_TFIDF()
     dialogs =obj.process_dialogs(5) # parameter: nb of candidates to retrieve from retrieval model
-    with open(obj.DATA_path+'Retrieved_dialogs_test.txt', 'w', encoding='utf-8') as filehandle:
+    with open(obj.DATA_path+'TrainingDataPLSW.txt', 'w', encoding='utf-8') as filehandle:
         for line in dialogs:
             filehandle.writelines("%s\n" % line)
     print('execution finshed')

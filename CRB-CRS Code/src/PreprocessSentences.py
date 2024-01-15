@@ -12,7 +12,7 @@ class PreprocessSentences:
     def __init__(self):
         self.PATH = os.path.dirname(os.path.abspath(__file__))
         self.ROOT_DIR_PATH = os.path.abspath(os.path.dirname(self.PATH))
-        self.DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data\\dialog_data\\')
+        self.DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data\\DialogData\\')
         print('object created')
     def seeker_sentences_parser(self, line):
         if line:
@@ -117,7 +117,8 @@ class PreprocessSentences:
 
 if __name__ == '__main__':
     obj = PreprocessSentences()
-    filename = os.path.join(obj.DATA_path, 'test_traningdata.txt')
+    # filename = os.path.join(obj.DATA_path, 'test_traningdata.txt')
+    filename = os.path.join(obj.DATA_path, 'TrainingDataParsed_Con.txt')
     sentencesData = obj.read_preprocess_sentences(filename)
     with open(obj.DATA_path +'TrainingDataPLSW.txt', 'w', encoding='utf-8') as filehandle:
         for line in sentencesData:

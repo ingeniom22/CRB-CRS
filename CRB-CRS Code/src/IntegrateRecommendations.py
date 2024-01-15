@@ -3,9 +3,13 @@ import re
 import random
 import numpy as np
 import os
-from src.Recommender_MF import Recommender_MF
-from src.Recommender import Recommender
-from src.Recommender_with_genre import Recommender_with_genre
+# from src.Recommender_MF import Recommender_MF
+# from src.Recommender import Recommender
+# from src.Recommender_with_genre import Recommender_with_genre
+
+from Recommender_MF import Recommender_MF
+from Recommender import Recommender
+from Recommender_with_genre import Recommender_with_genre
 
 
 
@@ -14,7 +18,7 @@ class IntegrateRecommendations:
     def __init__(self):
         self.PATH = os.path.dirname(os.path.abspath(__file__))
         self.ROOT_DIR_PATH = os.path.abspath(os.path.dirname(self.PATH))
-        self.ITEM_DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data\\recommenders_item_data\\')
+        self.ITEM_DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data\\RecommendersItemData\\')
         self.rec = None
         self.genre_rec= None
         self.rec_only_genre = None
@@ -430,7 +434,7 @@ class IntegrateRecommendations:
 
 if __name__ == '__main__':
      obj = IntegrateRecommendations()
-     data_path = obj.ROOT_DIR_PATH+'\\data\\dialog_data\\'
+     data_path = obj.ROOT_DIR_PATH+'\\data\\DialogData\\'
      input_dialogs = obj.read_dialogs_input_file(data_path + 'Retrieved_dialogs_by_MLE_score70.txt')
      if len(input_dialogs) > 0:
          retrived_dialogs_with_rec = obj.process_dialog(input_dialogs)

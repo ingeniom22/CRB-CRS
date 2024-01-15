@@ -9,7 +9,7 @@ class PrepareTrainingData:
         self.redial_data = None
         self.PATH = os.path.dirname(os.path.abspath(__file__))
         self.ROOT_DIR_PATH = os.path.abspath(os.path.dirname(self.PATH))
-        self.DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data\\dialog_data\\')
+        self.DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data\\DialogData\\')
         print('object created')
 
     def read_input_json_file(self,filename):

@@ -9,7 +9,7 @@ class Recommender_with_genre:
     def __init__(self):
             self.PATH = os.path.dirname(os.path.abspath(__file__))
             self.ROOT_DIR_PATH = os.path.abspath(os.path.dirname(self.PATH))
-            self.ITEM_DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data\\recommenders_item_data\\')
+            self.ITEM_DATA_path = os.path.join(self.ROOT_DIR_PATH, 'data\\RecommendersItemData\\')
             self.df_movie_content = pd.DataFrame()
             self.recommended_movies=[]
             self.C = 0
